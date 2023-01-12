@@ -29,8 +29,10 @@ import sys
 
 
 def main():
+    # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QApplication.html
     app = QApplication(sys.argv)
 
+    # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWidget.html
     window = QWidget()
     window.resize(250, 150)
     window.setWindowTitle('Simple Window')

@@ -35,6 +35,7 @@ class Window(QWidget):
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Quit button')
 
+        # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPushButton.html
         button_quit = QPushButton('Quit', self)
         button_quit.clicked.connect(QApplication.quit)
         button_quit.resize(button_quit.sizeHint())

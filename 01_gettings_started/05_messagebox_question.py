@@ -36,6 +36,7 @@ class Window(QWidget):
         self.setWindowTitle('Message box')
 
     def closeEvent(self, event):
+        # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QMessageBox.html
         answer = QMessageBox.question(self,
                                       'Message',
                                       "Are you sure to quit?",
