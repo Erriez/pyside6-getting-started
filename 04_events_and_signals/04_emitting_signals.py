@@ -24,7 +24,7 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QLabel
 from PySide6.QtCore import Signal, QObject
 import sys
 
@@ -39,6 +39,9 @@ class Window(QMainWindow):
 
         self.setGeometry(300, 300, 290, 150)
         self.setWindowTitle('Emit signal')
+
+        label = QLabel('Click to close window', self)
+        label.setGeometry(5, 50, 160, 40)
 
         self.c = Communicate()
         self.c.closeApp.connect(self.close)
