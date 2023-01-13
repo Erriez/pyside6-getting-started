@@ -38,6 +38,8 @@ class Window(QWidget):
 
         lcd = QLCDNumber(self)
         slider = QSlider(Qt.Horizontal, self)
+        slider.setMinimum(0)
+        slider.setMaximum(100)
 
         vbox = QVBoxLayout()
         vbox.addWidget(lcd)
