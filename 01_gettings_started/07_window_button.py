@@ -36,21 +36,28 @@ class MyWidget(QWidget):
 
         self.resize(300, 150)
 
-        self.hello = ["Hello World!", "Hallo wereld!", "Hallo Welt"]
+        self.hello = [
+            "Hello World in English!",
+            "Hallo wereld in Dutch!",
+            "Hallo Welt in German!",
+            "Bonjour le monde in French!",
+            "Ciao mondo in Italian!",
+            "Hola Mundo in Spanish!"
+        ]
 
         self.button = QPushButton("Click me!")
 
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLabel.html
-        self.text = QLabel("Hello World")
+        self.text = QLabel("I want to say something...")
         self.text.setAlignment(Qt.AlignCenter)
 
         self.layout = QVBoxLayout(self)
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
 
-        self.button.clicked.connect(self.magic)
+        self.button.clicked.connect(self.on_button_click)
 
-    def magic(self):
+    def on_button_click(self):
         self.text.setText(random.choice(self.hello))
 
 
