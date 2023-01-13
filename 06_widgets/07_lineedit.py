@@ -40,8 +40,8 @@ class Window(QWidget):
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLineEdit.html
         line_edit = QLineEdit(self)
 
-        line_edit.move(60, 100)
-        self.lbl.move(60, 40)
+        line_edit.move(75, 90)
+        self.lbl.move(75, 40)
 
         line_edit.textChanged.connect(self.on_text_change)
 
