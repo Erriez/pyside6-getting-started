@@ -31,3 +31,8 @@ $ . venv/bin/activate
 # Run an example
 $ python 01_gettings_started/01_simple_example.py
 ```
+
+## Known issues
+
+- Moving the top window on Wayland with widget functions `move()` and 
+ `setGeometry()` is supported by Qt / PySide6.

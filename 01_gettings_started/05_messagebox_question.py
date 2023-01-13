@@ -32,7 +32,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 250, 150)
+        self.resize(200, 150)
         self.setWindowTitle('Message box')
 
         label = QLabel('Close this window to\nshow message box', self)

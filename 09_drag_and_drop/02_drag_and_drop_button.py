@@ -56,13 +56,13 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 300, 150)
+        self.resize(250, 150)
         self.setWindowTitle('Click or move')
 
         self.setAcceptDrops(True)
 
         self.button = Button('Button', self)
-        self.button.move(100, 65)
+        self.button.move(80, 65)
 
     def dragEnterEvent(self, e):
         e.accept()

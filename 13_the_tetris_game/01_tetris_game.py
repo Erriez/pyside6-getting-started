@@ -39,7 +39,7 @@ class Tetris(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 180, 380)
+        self.resize(180, 380)
         self.setWindowTitle('Tetris')
         self.Tetrisboard = Board(self)
 

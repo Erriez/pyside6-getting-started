@@ -33,7 +33,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 170)
+        self.resize(250, 150)
         self.setWindowTitle('QProgressBar')
 
         # https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QProgressBar.html

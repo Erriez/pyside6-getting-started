@@ -32,7 +32,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 300)
+        self.resize(300, 250)
         self.setWindowTitle('Review')
 
         title = QLabel('Title')

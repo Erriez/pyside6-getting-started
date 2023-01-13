@@ -39,7 +39,8 @@ class Window(QWidget):
         self.window_center()
 
     def window_center(self):
-        # Window move not working on Ubuntu Wayland, Works on X11 and Windows 10!
+        # Window move on Wayland not supported in Qt
+        # Works on X11 and Windows 10!
         # https://stackoverflow.com/questions/75050226/pyside6-qmainwindow-move-not-working-on-ubuntu
         qr = self.frameGeometry()
         cp = QGuiApplication.primaryScreen().availableGeometry().center()

@@ -34,7 +34,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 270)
+        self.resize(300, 300)
         self.setWindowTitle('Pen styles')
 
     def paintEvent(self, e):

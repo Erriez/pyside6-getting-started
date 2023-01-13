@@ -34,7 +34,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 170)
+        self.resize(250, 150)
         self.setWindowTitle('Draw text')
 
         self.text = 'Hello world\nfrom PySide6!'

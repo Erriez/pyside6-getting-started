@@ -33,7 +33,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 300, 200)
+        self.resize(300, 300)
         self.setWindowTitle('QSplitter')
 
         hbox = QHBoxLayout(self)

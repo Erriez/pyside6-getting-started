@@ -33,7 +33,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 100)
+        self.resize(350, 150)
         self.setWindowTitle('Colors')
 
     def paintEvent(self, e):

@@ -35,7 +35,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 250)
+        self.resize(300, 250)
         self.setWindowTitle('Main window')
 
         text_edit = QTextEdit()

@@ -32,7 +32,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 170)
+        self.resize(300, 150)
         self.setWindowTitle('QLineEdit')
 
         self.lbl = QLabel('Type a text', self)

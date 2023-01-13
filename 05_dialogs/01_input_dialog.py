@@ -32,7 +32,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 290, 150)
+        self.resize(300, 100)
         self.setWindowTitle('Input dialog')
 
         self.button = QPushButton('Dialog', self)

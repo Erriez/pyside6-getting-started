@@ -32,7 +32,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 250, 150)
+        self.resize(250, 150)
         self.setWindowTitle('Quit button')
 
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPushButton.html

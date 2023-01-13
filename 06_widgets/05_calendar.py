@@ -33,7 +33,6 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 300)
         self.setWindowTitle('Calendar')
 
         # https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QCalendarWidget.html

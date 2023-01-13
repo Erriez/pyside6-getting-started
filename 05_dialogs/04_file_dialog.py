@@ -34,7 +34,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 300)
+        self.resize(400, 300)
         self.setWindowTitle('File dialog')
 
         self.textEdit = QTextEdit()

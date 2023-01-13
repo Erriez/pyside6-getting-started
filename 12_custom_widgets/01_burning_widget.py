@@ -96,7 +96,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 390, 210)
+        self.resize(350, 200)
         self.setWindowTitle('Burning widget')
 
         slider = QSlider(Qt.Horizontal, self)

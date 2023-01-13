@@ -35,7 +35,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 170)
+        self.resize(250, 150)
         self.setWindowTitle('Points')
 
     def paintEvent(self, e):

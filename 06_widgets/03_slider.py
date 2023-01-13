@@ -37,7 +37,7 @@ class Window(QWidget):
 
         self.path = Path(__file__).resolve().parent
 
-        self.setGeometry(300, 300, 280, 170)
+        self.resize(250, 150)
         self.setWindowTitle('QSlider')
 
         # https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QSlider.html

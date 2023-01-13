@@ -48,7 +48,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 300, 150)
+        self.resize(300, 150)
         self.setWindowTitle('Simple Drag & Drop')
 
         qe = QLineEdit('', self)

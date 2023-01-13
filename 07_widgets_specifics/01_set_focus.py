@@ -32,7 +32,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setMinimumSize(400, 100)
+        self.resize(250, 150)
         self.setWindowTitle("Focus example")
 
         txt_edit1 = QLineEdit('')

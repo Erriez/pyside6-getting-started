@@ -37,7 +37,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 290, 150)
+        self.resize(250, 150)
         self.setWindowTitle('Emit signal')
 
         label = QLabel('Click to close window', self)

@@ -34,7 +34,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 355, 280)
+        self.resize(350, 300)
         self.setWindowTitle('Brushes')
 
     def paintEvent(self, e):

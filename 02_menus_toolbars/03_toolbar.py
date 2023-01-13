@@ -35,7 +35,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 350, 250)
+        self.resize(250, 150)
         self.setWindowTitle('Toolbar')
 
         path = Path(__file__).resolve().parent

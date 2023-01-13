@@ -33,7 +33,6 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setGeometry(300, 300, 280, 170)
         self.setWindowTitle('Toggle button')
 
         self.col = QColor(0, 0, 0)

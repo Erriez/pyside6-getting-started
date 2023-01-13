@@ -60,6 +60,9 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        # Resize window
+        self.resize(250, 150)
+
         # Set window title
         self.setWindowTitle('Event sender')
 
