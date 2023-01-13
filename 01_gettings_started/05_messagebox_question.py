@@ -24,7 +24,7 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QWidget, QMessageBox
+from PySide6.QtWidgets import QApplication, QWidget, QLabel, QMessageBox
 import sys
 
 
@@ -34,6 +34,9 @@ class Window(QWidget):
 
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Message box')
+
+        label = QLabel('Close this window to\nshow message box', self)
+        label.move(5, 5)
 
     def closeEvent(self, event):
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QMessageBox.html
