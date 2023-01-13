@@ -35,7 +35,7 @@ class Window(QWidget):
         self.setGeometry(300, 300, 280, 170)
         self.setWindowTitle('QLineEdit')
 
-        self.lbl = QLabel(self)
+        self.lbl = QLabel('Type a text', self)
 
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLineEdit.html
         line_edit = QLineEdit(self)
