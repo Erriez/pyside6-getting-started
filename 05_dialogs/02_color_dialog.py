@@ -33,6 +33,8 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        self.setWindowTitle('Color dialog')
+
         col = QColor(0, 0, 0)
 
         self.btn = QPushButton('Dialog', self)
@@ -43,10 +45,6 @@ class Window(QWidget):
         self.frm = QFrame(self)
         self.frm.setStyleSheet("QWidget { background-color: %s }" % col.name())
         self.frm.setGeometry(130, 22, 100, 100)
-
-        self.setGeometry(300, 300, 250, 180)
-        self.setWindowTitle('Color dialog')
-        self.show()
 
     def show_dialog(self):
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QColorDialog.html
