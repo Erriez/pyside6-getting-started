@@ -24,7 +24,7 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtWidgets import QApplication, QWidget, QLabel
 from PySide6.QtCore import Qt
 import sys
 
@@ -36,8 +36,11 @@ class Window(QWidget):
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Event handler')
 
+        self.label = QLabel('Press a key...', self)
+        self.label.move(20, 20)
+
     def keyPressEvent(self, event):
-        print(event)
+        self.label.setText('Key press: {}'.format(event.text()))
 
         # https://doc.qt.io/qtforpython/PySide6/QtCore/Qt.html?highlight=key_escape#PySide6.QtCore.PySide6.QtCore.Qt.Key
         if event.key() == Qt.Key_Escape:
