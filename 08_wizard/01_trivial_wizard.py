@@ -66,8 +66,8 @@ def create_conclusion_page():
     return page
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
+def main():
+    QApplication(sys.argv)
 
     wizard = QWizard()
     wizard.addPage(create_intro_page())
@@ -78,3 +78,7 @@ if __name__ == '__main__':
     wizard.show()
 
     sys.exit(wizard.exec())
+
+
+if __name__ == '__main__':
+    main()
