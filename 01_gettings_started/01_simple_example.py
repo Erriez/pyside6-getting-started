@@ -32,12 +32,20 @@ def main():
     # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QApplication.html
     app = QApplication(sys.argv)
 
+    # Create QWidget object
     # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWidget.html
     window = QWidget()
-    window.resize(250, 150)
+
+    # Resize window
+    window.resize(300, 200)
+
+    # Set window title
     window.setWindowTitle('Simple Window')
+
+    # Show window
     window.show()
 
+    # Application loop
     sys.exit(app.exec())
 
 
