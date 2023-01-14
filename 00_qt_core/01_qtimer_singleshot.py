@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# Source:         https://github.com/Erriez/pyside6-examples
+# Source: https://github.com/Erriez/pyside6-getting-started
 #
 
 from PySide6.QtWidgets import QApplication
