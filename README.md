@@ -21,75 +21,11 @@ installation source.
 - [PySide6 Python module](https://pypi.org/project/PySide6/)
 - [Qt Licensing](https://www.qt.io/licensing/)
 
-## Installation Linux 
+## Setup and Usage
 
-Run the following commands in a Linux terminal:
-
-```bash
-# Clone the sources (Make sure git is installed)
-$ git clone https://github.com/Erriez/pyside6-getting-started.git
-
-# Change directory to the sources
-$ cd pyside6-getting-started
-
-# Create a Python virtual environment
-$ virtualenv venv
-
-# Activate virtual environment (Prompt changes to venv)
-$ . venv/bin/activate
-
-# Install dependencies including PySide6
-(venv) $ pip install -r requirements.txt
-```
-
-To run an example on Linux:
-
-```bash
-# Activate virtual environment
-$ . venv/bin/activate
-
-# Run an example
-(venv) $ python 01_gettings_started/01_simple_example.py
-```
-
-## Installation Windows
-
-* Download and install [Git](https://git-scm.com/download/win).
-* Download and install [Python3](https://www.python.org/downloads/).  
-  During installation, check: `Add Python to environment variables`. 
-* Run the following commands in a Windows command prompt:  
-  (`Winkey`+`R`, type: `cmd` followed by `Enter`)
-  
-
-```bat
-# Clone the sources (Make sure git is installed)
-> git clone https://github.com/Erriez/pyside6-getting-started.git
-
-# Change directory to the sources
-> cd pyside6-getting-started
-
-# Install virtualenv (Make sure pip and Python are in the path)
-> pip install virtualenv
-
-# Create a Python virtual environment
-> virtualenv venv
-
-# Activate virtual environment (Prompt changes to venv)
-> venv\Scripts\activate.bat
-
-# Install dependencies including PySide6
-(venv) > pip install -r requirements.txt
-```
-
-To run an example on Windows:
-
-```bash
-# Activate virtual environment
-> venv\Scripts\activate.bat
-
-# Run an example
-(venv) > python 01_gettings_started\01_simple_example.py
-```
+- [Linux setup](SETUP_LINUX.md)
+- [Windows setup](SETUP_WINDOWS.md)
+- MAC setup: Not supported by developer [Erriez](https://github.com/Erriez/).
 
 ## Versions and Platforms
 
@@ -97,8 +33,6 @@ Examples are tested with PySide v6.4.2 on Ubuntu 22.10 Wayland and Windows 10.
 As Qt is platform independent, it may work on other systems like Raspberry Pi.
 See section [Known issues](https://github.com/Erriez/pyside6-getting-started#known-issues) 
 for platform specific issues.
-
-**Note:** Developer [Erriez](https://github.com/Erriez/) does not support MAC.
 
 ## Known issues
 
