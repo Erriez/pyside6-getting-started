@@ -35,7 +35,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle('Red Rock')
+        self.setWindowTitle('Image')
 
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPixmap.html
         path = Path(__file__).resolve().parent
