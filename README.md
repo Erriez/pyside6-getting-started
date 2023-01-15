@@ -44,6 +44,10 @@ installation source.
 - [Windows setup](SETUP_WINDOWS.md)
 - MAC setup: Not supported by developer [Erriez](https://github.com/Erriez/).
 
+## Debug with PyCharm
+
+- [Debug with free PyCharm](SETUP_PyCharm.md) (On Windows and Linux desktops)
+
 ## Versions and Platforms
 
 Examples are tested with PySide v6.4.2 on Ubuntu 22.10 Wayland and Windows 10.
