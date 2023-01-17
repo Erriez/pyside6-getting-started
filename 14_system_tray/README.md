@@ -1,0 +1,3 @@
+# PySide6 System Tray Icon
+
+Todo...

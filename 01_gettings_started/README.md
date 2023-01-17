@@ -18,14 +18,10 @@
 
 ![04_closing_a_window](04_closing_a_window.png)
 
-## [05_messagebox_question.py](05_messagebox_question.py)
+## [05_window_center.py](05_window_center.py)
 
-![05_messagebox_question](05_messagebox_question.png)
+![05_window_center](05_window_center.png)
 
-## [06_window_center.py](06_window_center.py)
+## [06_window_button.py](06_window_button.py)
 
-![06_window_center](06_window_center.png)
-
-## [07_window_button.py](07_window_button.py)
-
-![07_window_button](07_window_button.png)
+![06_window_button](06_window_button.png)
