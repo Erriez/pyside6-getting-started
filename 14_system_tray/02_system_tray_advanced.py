@@ -145,9 +145,6 @@ class Application(QApplication):
         # Create window widget
         self._window = Window(self._system_tray)
 
-        # Application main loop
-        sys.exit(self.exec())
-
     def create_menu(self):
         # Create the menu
         # The system tray icon does not take ownership of the menu. You must ensure
@@ -234,7 +231,10 @@ class Application(QApplication):
 
 def main():
     # Create application
-    Application(sys.argv)
+    app = Application(sys.argv)
+
+    # Application main loop
+    sys.exit(app.exec())
 
 
 if __name__ == '__main__':
