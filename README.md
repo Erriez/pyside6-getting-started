@@ -32,7 +32,8 @@ installation source.
 - [12 Custom Widgets](12_custom_widgets/README.md)
 - [13 Qt Creator](13_qt_creator/README.md)
 - [14 System tray](14_system_tray/README.md)
-- [15 Games](15_games/README.md)
+- [15 Miscellaneous](15_misc/README.md)
+- [16 Games](16_games/README.md)
 
 ## PySide6 Documentation
 
