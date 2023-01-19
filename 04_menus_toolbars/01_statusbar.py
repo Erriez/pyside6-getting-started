@@ -35,6 +35,7 @@ class Window(QMainWindow):
         self.resize(250, 150)
         self.setWindowTitle('Statusbar')
 
+        # Set statusbar message
         self.statusBar().showMessage('Message in the status bar')
 
 

@@ -38,16 +38,23 @@ class Window(QMainWindow):
         self.resize(250, 150)
         self.setWindowTitle('Menubar')
 
+        # Create exit action with icon, shortcut, status tip and close window click event
         path = Path(__file__).resolve().parent
         exit_action = QAction(QIcon(os.path.join(path, '..', 'images', 'exit.png')), '&Exit', self)
         exit_action.setShortcut('Ctrl+Q')
         exit_action.setStatusTip('Exit application')
         exit_action.triggered.connect(self.close)
 
+        # Create menu bar
         menubar = self.menuBar()
+
+        # Add File menu
         menu_file = menubar.addMenu('&File')
+
+        # Add exit action to File menu
         menu_file.addAction(exit_action)
 
+        # Create status bar
         self.statusBar()
 
 

@@ -38,22 +38,29 @@ class Window(QMainWindow):
         self.resize(300, 250)
         self.setWindowTitle('Main window')
 
+        # Create text edit and center on window
         text_edit = QTextEdit()
         self.setCentralWidget(text_edit)
 
+        # Create exit action with icon, shortcut, status tip and close window click event
         path = Path(__file__).resolve().parent
         exit_action = QAction(QIcon(os.path.join(path, '..', 'images', 'exit.png')), '&Exit', self)
         exit_action.setShortcut('Ctrl+Q')
         exit_action.setStatusTip('Exit application')
         exit_action.triggered.connect(self.close)
 
+        # Create menubar
         menubar = self.menuBar()
+
+        # Add File menu
         menu_file = menubar.addMenu('&File')
         menu_file.addAction(exit_action)
 
+        # Add Exit to File menu
         toolbar = self.addToolBar('Exit')
         toolbar.addAction(exit_action)
 
+        # Create statusbar
         self.statusBar()
 
 

@@ -33,18 +33,25 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Resize window
         self.resize(250, 150)
+
+        # Set window title
         self.setWindowTitle('Tooltip')
 
+        # Set tooltip font
         QToolTip.setFont(QFont('SansSerif', 10))
 
+        # Set tooltip on window
         self.setToolTip('This is a <b>QWidget</b> widget')
 
+        # Create button and set tooltip
         button = QPushButton('Button', self)
         button.setFixedWidth(150)
         button.setToolTip('This is a <b>QPushButton</b> widget')
         button.resize(button.sizeHint())
 
+        # Add button to window
         layout = QHBoxLayout(self)
         layout.addWidget(button)
 

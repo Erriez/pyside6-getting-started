@@ -34,8 +34,13 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Resize window
         self.resize(300, 150)
 
+        # Set window title
+        self.setWindowTitle('Button')
+
+        # List with messages
         self.hello = [
             "Hello World in English!",
             "Hallo wereld in Dutch!",
@@ -45,20 +50,23 @@ class Window(QWidget):
             "Hola Mundo in Spanish!"
         ]
 
+        # Create push button
         self.button = QPushButton("Click me!")
-
-        # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLabel.html
-        self.text = QLabel("I want to say something...")
-        self.text.setAlignment(Qt.AlignCenter)
-
-        self.layout = QVBoxLayout(self)
-        self.layout.addWidget(self.text)
-        self.layout.addWidget(self.button)
-
         self.button.clicked.connect(self.on_button_click)
 
+        # Create label and center text
+        # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLabel.html
+        self.label = QLabel("I want to say something...")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        # Add label button to vertical box layout
+        self.layout = QVBoxLayout(self)
+        self.layout.addWidget(self.label)
+        self.layout.addWidget(self.button)
+
     def on_button_click(self):
-        self.text.setText(random.choice(self.hello))
+        # Update label
+        self.label.setText(random.choice(self.hello))
 
 
 if __name__ == "__main__":

@@ -35,17 +35,21 @@ class Window(QWidget):
         self.resize(300, 250)
         self.setWindowTitle('Review')
 
+        # Create labels
         title = QLabel('Title')
         author = QLabel('Author')
         review = QLabel('Review')
 
+        # Create line edits
         title_edit = QLineEdit()
         author_edit = QLineEdit()
         review_edit = QTextEdit()
 
+        # Create grid layout
         grid = QGridLayout()
         grid.setSpacing(10)
 
+        # Add widgets to grid layout
         grid.addWidget(title, 1, 0)
         grid.addWidget(title_edit, 1, 1)
 
@@ -55,6 +59,7 @@ class Window(QWidget):
         grid.addWidget(review, 3, 0)
         grid.addWidget(review_edit, 3, 1, 5, 1)
 
+        # Add grid layout to window
         self.setLayout(grid)
 
 

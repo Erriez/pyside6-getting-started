@@ -35,6 +35,7 @@ class Window(QWidget):
         self.resize(250, 150)
         self.setWindowTitle('Absolute')
 
+        # Add 3 labels to window with fixed position using move(x, y)
         label1 = QLabel('My', self)
         label1.move(15, 10)
 

@@ -35,20 +35,24 @@ class Window(QWidget):
         self.resize(250, 150)
         self.setWindowTitle('Buttons')
 
+        # Create two buttons
         button_ok = QPushButton("OK")
         button_cancel = QPushButton("Cancel")
 
+        # Add buttons to horizontal box layout, align right with stretch
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QHBoxLayout.html
         hbox = QHBoxLayout()
         hbox.addStretch(1)
         hbox.addWidget(button_ok)
         hbox.addWidget(button_cancel)
 
+        # Add horizontal layout to vertical layout, align on bottom with stretch
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QVBoxLayout.html
         vbox = QVBoxLayout()
         vbox.addStretch(1)
         vbox.addLayout(hbox)
 
+        # Add vertical layout to window
         self.setLayout(vbox)
 
 

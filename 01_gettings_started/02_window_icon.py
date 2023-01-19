@@ -35,9 +35,13 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Resize window
         self.resize(250, 150)
+
+        # Set window title
         self.setWindowTitle('Window Icon')
 
+        # Set window icon
         path = Path(__file__).resolve().parent
         self.setWindowIcon(QIcon(os.path.join(path, '..', 'images', 'web.png')))
 

@@ -32,14 +32,17 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Resize window
         self.resize(250, 150)
         self.setWindowTitle('Quit button')
 
+        # Create push button
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPushButton.html
         button_quit = QPushButton('Quit', self)
         button_quit.clicked.connect(QApplication.quit)
         button_quit.resize(button_quit.sizeHint())
 
+        # Add button to window
         layout = QHBoxLayout(self)
         layout.addWidget(button_quit)
 

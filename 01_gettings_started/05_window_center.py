@@ -33,9 +33,13 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Resize window
+        self.resize(250, 150)
+
+        # Set window title
         self.setWindowTitle('Center')
 
-        self.resize(250, 150)
+        # Center window on screen
         self.window_center()
 
     def window_center(self):

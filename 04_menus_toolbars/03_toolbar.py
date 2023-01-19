@@ -38,11 +38,13 @@ class Window(QMainWindow):
         self.resize(250, 150)
         self.setWindowTitle('Toolbar')
 
+        # Create exit action with icon, shortcut and close window click event
         path = Path(__file__).resolve().parent
         exit_action = QAction(QIcon(os.path.join(path, '..', 'images', 'exit.png')), 'Exit', self)
         exit_action.setShortcut('Ctrl+Q')
         exit_action.triggered.connect(self.close)
 
+        # Create toolbar with Exit button
         self.toolbar = self.addToolBar('Exit')
         self.toolbar.addAction(exit_action)
 
