@@ -37,3 +37,7 @@
 ## [09_combobox.py](09_combobox.py)
 
 ![09_combobox](09_combobox.png)
+
+## [10_standard_icons.py](10_standard_icons.py)
+
+![10_standard_icons](10_standard_icons.png)
