@@ -30,7 +30,7 @@ import random
 import sys
 
 
-class MyWidget(QWidget):
+class Window(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -63,6 +63,6 @@ class MyWidget(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    widget = MyWidget()
-    widget.show()
+    window = Window()
+    window.show()
     sys.exit(app.exec())
