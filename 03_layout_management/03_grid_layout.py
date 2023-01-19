@@ -34,28 +34,28 @@ class Window(QWidget):
 
         self.setWindowTitle('Calculator')
 
+        # Create grid layout. It resizes the window automatically.
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QGridLayout.html
         grid = QGridLayout()
 
-        pos = [(0, 0), (0, 1), (0, 2), (0, 3),
-               (1, 0), (1, 1), (1, 2), (1, 3),
-               (2, 0), (2, 1), (2, 2), (2, 3),
-               (3, 0), (3, 1), (3, 2), (3, 3),
-               (4, 0), (4, 1), (4, 2), (4, 3)]
+        # Button names
+        button_names = ['Cls', 'Bck', '', 'Close',
+                        '7', '8', '9', '/',
+                        '4', '5', '6', '*',
+                        '1', '2', '3', '-',
+                        '0', '.', '=', '+']
 
-        names = ['Cls', 'Bck', '', 'Close', '7', '8', '9', '/',
-                 '4', '5', '6', '*', '1', '2', '3', '-',
-                 '0', '.', '=', '+']
-
-        j = 0
-        for i in names:
-            button = QPushButton(i)
-            if j == 2:
-                grid.addWidget(QLabel(''), 0, 2)
+        # Create push buttons and add to grid layout
+        for i in range(0, len(button_names)):
+            row = i / 4
+            col = i % 4
+            if not button_names[i]:
+                grid.addWidget(QLabel(''), row, col)
             else:
-                grid.addWidget(button, pos[j][0], pos[j][1])
-            j = j + 1
+                button = QPushButton(button_names[i])
+                grid.addWidget(button, row, col)
 
+        # Add grid layout to window
         self.setLayout(grid)
 
 
