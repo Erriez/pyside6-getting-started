@@ -17,3 +17,7 @@
 ## [04_file_dialog.py](04_file_dialog.py)
 
 ![04_file_dialog](04_file_dialog.png)
+
+## [05_custom_dialog.py](05_custom_dialog.py)
+
+![05_custom_dialog](05_custom_dialog.png)
