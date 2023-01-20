@@ -52,6 +52,7 @@ class Window(QWidget):
 
         # Create push button
         self.button = QPushButton("Click me!")
+        self.button.setFixedWidth(150)
         self.button.clicked.connect(self.on_button_click)
 
         # Create label and center text
@@ -62,7 +63,7 @@ class Window(QWidget):
         # Add label button to vertical box layout
         self.layout = QVBoxLayout(self)
         self.layout.addWidget(self.label)
-        self.layout.addWidget(self.button)
+        self.layout.addWidget(self.button, alignment=Qt.AlignCenter)
 
     def on_button_click(self):
         # Update label
