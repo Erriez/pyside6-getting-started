@@ -25,3 +25,7 @@
 ## [06_window_button.py](06_window_button.py)
 
 ![06_window_button](06_window_button.png)
+
+## [07_window_hide_min_max.py](07_window_hide_min_max.py)
+
+![07_window_hide_min_max](07_window_hide_min_max.png)
