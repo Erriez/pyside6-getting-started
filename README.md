@@ -34,6 +34,7 @@ installation source.
 - [14 System tray](14_system_tray/README.md)
 - [15 Miscellaneous](15_misc/README.md)
 - [16 Games](16_games/README.md)
+- [17 Desktop Applications](17_desktop_apps/README.md)
 
 ## PySide6 Documentation
 
