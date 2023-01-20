@@ -24,7 +24,8 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QGridLayout, QPushButton, QStyle, QWidget
+from PySide6.QtWidgets import QApplication, QVBoxLayout, QGridLayout, QPushButton, QStyle, QWidget
+from PySide6.QtGui import Qt
 import sys
 
 NUM_COLUMNS = 4
@@ -62,8 +63,20 @@ class Window(QWidget):
             column = icon_id % NUM_COLUMNS
             grid_layout.addWidget(button, row, column)
 
+        # Create button with icon
+        button_quit = QPushButton('Quit')
+        button_quit.setFixedWidth(200)
+        button_quit.setIcon(self.style().standardIcon(QStyle.SP_DialogOkButton))
+        button_quit.clicked.connect(QApplication.quit)
+
+        # Create vertical box layout
+        vbox = QVBoxLayout()
+        vbox.addLayout(grid_layout)
+        vbox.addSpacing(50)
+        vbox.addWidget(button_quit, alignment=Qt.AlignCenter)
+
         # Add layout to window
-        self.setLayout(grid_layout)
+        self.setLayout(vbox)
 
 
 def main():
