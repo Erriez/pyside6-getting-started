@@ -40,7 +40,6 @@ class Window(QWidget):
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPushButton.html
         button_quit = QPushButton('Quit', self)
         button_quit.clicked.connect(QApplication.quit)
-        button_quit.resize(button_quit.sizeHint())
 
         # Add button to window
         layout = QHBoxLayout(self)
