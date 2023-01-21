@@ -59,8 +59,26 @@ As Qt is platform independent, it may work on other systems like Raspberry Pi.
 See section [Known issues](https://github.com/Erriez/pyside6-getting-started#known-issues) 
 for platform specific issues.
 
-## Known issues
+## Known Bugs and Issues
 
-- **Linux**: Moving the top window on (Ubuntu) Wayland with widget functions
-  `move()` and `setGeometry()` are not supported by Qt / PySide6. This works on
-  X11.
+The following `Qt` / `PySide6` / `Qt Creator` bugs are reported and affects 
+examples in this repository:
+
+- [QTBUG-110119](https://bugreports.qt.io/browse/QTBUG-110119): Cannot move 
+  window on Ubuntu Wayland.
+  - Moving the top window on (Ubuntu) Wayland with widget functions `move()` and 
+  `setGeometry()` are not supported by Qt / PySide6.
+  - Window move works on X11 and Windows 10.
+  - Other desktop GUI's such as TKinter are able to move the top window on 
+    Wayland.
+  - [QTBUG-86780](https://bugreports.qt.io/browse/QTBUG-86780): Documentation
+    update requested.
+- [QTBUG-110290](https://bugreports.qt.io/browse/QTBUG-110290): QWidget 
+  `showNormal()` not working when window is minimized on Ubuntu X11 and Wayland.
+- [QTBUG-110448](https://bugreports.qt.io/browse/QTBUG-110448): Cannot remove 
+  window min/max buttons on Ubuntu Wayland.
+- [QTCREATORBUG-25807](https://bugreports.qt.io/browse/QTCREATORBUG-25807):
+  PySide6 generated class doesn't load UI file correctly with QtCreator.
+- Be aware that a large number of official
+  [PySide6](https://doc.qt.io/qtforpython/) examples are currently outdated or 
+  API documentation is incomplete or inconsistent.
