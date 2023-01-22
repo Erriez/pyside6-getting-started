@@ -41,3 +41,7 @@
 ## [10_standard_icons.py](10_standard_icons.py)
 
 ![10_standard_icons](10_standard_icons.png)
+
+## [11_dial.py](11_dial.py)
+
+![11_dial](11_dial.png)
