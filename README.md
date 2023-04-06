@@ -36,6 +36,12 @@ installation source.
 - [16 Games](16_games/README.md)
 - [17 Desktop Applications](17_desktop_apps/README.md)
 
+## PySide6 Deployment
+
+A separate PySide6 deployment project for Windows / Linux using Nuitka on
+Github Actions is available 
+[here](https://github.com/Erriez/pyside6-nuitka-deployment). 
+
 ## PySide6 Documentation
 
 - [Qt for Python](https://doc.qt.io/qtforpython/)
