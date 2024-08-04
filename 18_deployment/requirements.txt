@@ -1,0 +1,4 @@
+imageio==2.34.2
+Nuitka==2.4.5
+patchelf==0.17.2.1
+PySide6==6.7.2

@@ -35,6 +35,7 @@ installation source.
 - [15 Miscellaneous](15_misc/README.md)
 - [16 Games](16_games/README.md)
 - [17 Desktop Applications](17_desktop_apps/README.md)
+- [18 Deployment](18_deployment/README.md)
 
 ## PySide6 Deployment
 

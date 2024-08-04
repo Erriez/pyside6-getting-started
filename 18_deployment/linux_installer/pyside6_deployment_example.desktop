@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Erriez PySide6 Deployment Example
+GenericName=Erriez PySide6 Deployment Example
+Comment=A PySide6 example created by Erriez
+Icon=
+Exec=
+Categories=PySide6;Utility;
+Keywords=Erriez;PySide6;
+Terminal=false
+MimeType=application/pyside6_deployment_example;
