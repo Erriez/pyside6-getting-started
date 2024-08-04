@@ -86,6 +86,9 @@ examples in this repository:
   window min/max buttons on Ubuntu Wayland.
 - [QTCREATORBUG-25807](https://bugreports.qt.io/browse/QTCREATORBUG-25807):
   PySide6 generated class doesn't load UI file correctly with QtCreator.
+- Example `13_qt_creator\01_qt_creator_qwidget.py` generates a warning:
+  `Attribute Qt::AA_ShareOpenGLContexts must be set before QCoreApplication is created.`
+  Unclear how to resolve this.
 - Be aware that a large number of official
   [PySide6](https://doc.qt.io/qtforpython/) examples are currently outdated or 
   API documentation is incomplete or inconsistent.
