@@ -48,15 +48,18 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.resize(300, 150)
+        self.resize(350, 150)
         self.setWindowTitle('Simple Drag & Drop')
 
         qe = QLineEdit('', self)
         qe.setDragEnabled(True)
+        qe.setText('Drag to the button')
+        qe.selectAll()
+        qe.setFixedWidth(150)
         qe.move(30, 65)
 
         button = Button("Button", self)
-        button.move(190, 65)
+        button.move(230, 65)
 
 
 def main():
