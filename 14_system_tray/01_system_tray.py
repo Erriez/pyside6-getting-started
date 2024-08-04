@@ -27,6 +27,8 @@
 from PySide6.QtWidgets import QApplication, QWidget, QSystemTrayIcon, QMenu, \
     QMessageBox, QSizePolicy, QPushButton, QHBoxLayout
 from PySide6.QtGui import QIcon, QAction
+from pathlib import Path
+import os
 import sys
 
 
@@ -36,7 +38,8 @@ def main():
     # Keep application running when all windows are closed
     app.setQuitOnLastWindowClosed(False)
     # Set window icon
-    app.setWindowIcon(QIcon("../images/web.png"))
+    path = Path(__file__).resolve().parent
+    app.setWindowIcon(QIcon(os.path.join(path, "../images/web.png")))
 
     # Create the menu
     # The system tray icon does not take ownership of the menu. You must ensure
@@ -56,7 +59,7 @@ def main():
     system_tray = QSystemTrayIcon()
 
     # Set system tray icon
-    system_tray.setIcon(QIcon("../images/web.png"))
+    system_tray.setIcon(QIcon(os.path.join(path, "../images/web.png")))
 
     # Make system tray icon with menu visible
     system_tray.setVisible(True)

@@ -26,7 +26,9 @@
 
 from PySide6.QtWidgets import QApplication, QWidget, QSystemTrayIcon, QMenu, \
     QMessageBox, QSizePolicy, QPushButton, QCheckBox, QVBoxLayout
-from PySide6.QtGui import Qt, QIcon, QAction
+from PySide6.QtGui import QIcon, QAction
+from pathlib import Path
+import os
 import sys
 
 
@@ -134,7 +136,8 @@ class Application(QApplication):
         # Keep application running when all windows are closed
         self.setQuitOnLastWindowClosed(False)
         # Set window icon
-        self.setWindowIcon(QIcon("../images/web.png"))
+        path = Path(__file__).resolve().parent
+        self.setWindowIcon(QIcon(os.path.join(path, "../images/web.png")))
 
         # Create tray menu
         self.create_menu()
@@ -185,7 +188,8 @@ class Application(QApplication):
         self._system_tray = QSystemTrayIcon()
 
         # Set system tray icon
-        self._system_tray.setIcon(QIcon("../images/web.png"))
+        path = Path(__file__).resolve().parent
+        self._system_tray.setIcon(QIcon(os.path.join(path, "../images/web.png")))
 
         # Make system tray icon with menu visible
         self._system_tray.setVisible(True)
