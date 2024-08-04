@@ -23,4 +23,3 @@ echo "Created installer:"
 ./"${OUTPUT_FILE}" --check
 ./"${OUTPUT_FILE}" --info
 ./"${OUTPUT_FILE}" --list
-

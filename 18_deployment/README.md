@@ -10,7 +10,8 @@
 ### Linux: Create .deb installer
 
 ```
-$ build_linux.sh
+# Build executable and installer
+$ ./build_linux.sh
 
 # Run setup
 $ ./pyside6_deployment_example.deb
@@ -24,6 +25,7 @@ $ $HOME/.local/bin/erriez/pyside6_deployment_example/uninstall.sh
 Download and install [NSIS](https://nsis.sourceforge.io/Download).
 
 ```
+# Build executable and installer
 > build_windows.bat
 
 # Run setup
