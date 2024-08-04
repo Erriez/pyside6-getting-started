@@ -46,7 +46,7 @@ class Window(QWidget):
     def drawRectangles(self, qp):
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QColor.html
         color = QColor(0, 0, 0)
-        color.setNamedColor('#d4d4d4')
+        color.fromString('#d4d4d4')
         qp.setPen(color)
 
         qp.setBrush(QColor(200, 0, 0))

@@ -60,7 +60,8 @@ Github Actions is available
 
 ## Versions and Platforms
 
-Examples are tested with PySide v6.4.2 on Ubuntu 22.10 Wayland and Windows 10.
+Examples are tested with PySide 6.7.2 on Ubuntu 22.10 Wayland and
+Windows 10/11.
 As Qt is platform independent, it may work on other systems like Raspberry Pi.
 See section [Known issues](https://github.com/Erriez/pyside6-getting-started#known-issues) 
 for platform specific issues.
