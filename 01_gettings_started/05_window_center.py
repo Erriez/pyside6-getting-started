@@ -25,7 +25,7 @@
 #
 
 from PySide6.QtWidgets import QApplication, QWidget
-from PySide6.QtGui import QGuiApplication
+from PySide6.QtGui import QScreen
 import sys
 
 
@@ -44,11 +44,17 @@ class Window(QWidget):
 
     def window_center(self):
         # Window move on Wayland not supported in Qt
-        # Works on X11 and Windows 10!
+        # Works on Linux X11 and Windows 10/11!
         # https://stackoverflow.com/questions/75050226/pyside6-qmainwindow-move-not-working-on-ubuntu
-        qr = self.frameGeometry()
-        cp = QGuiApplication.primaryScreen().availableGeometry().center()
-        qr.moveCenter(cp)
+
+        # Get Screen geometry
+        screen_size = QScreen.availableGeometry(QApplication.primaryScreen())
+        # Set X Position Center
+        x = (screen_size.width() - self.width()) / 2
+        # Set Y Position Center
+        y = (screen_size.height() - self.height()) / 2
+        # Set Form's Center Location
+        self.move(x, y)
 
 
 def main():
