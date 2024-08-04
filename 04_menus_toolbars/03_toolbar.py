@@ -40,7 +40,7 @@ class Window(QMainWindow):
 
         # Create exit action with icon, shortcut and close window click event
         path = Path(__file__).resolve().parent
-        exit_action = QAction(QIcon(os.path.join(path, '..', 'images', 'exit.png')), 'Exit', self)
+        exit_action = QAction(QIcon(os.path.join(path, '../images/exit.png')), 'Exit', self)
         exit_action.setShortcut('Ctrl+Q')
         exit_action.triggered.connect(self.close)
 

@@ -43,7 +43,7 @@ class Window(QWidget):
 
         # Set window icon
         path = Path(__file__).resolve().parent
-        self.setWindowIcon(QIcon(os.path.join(path, '..', 'images', 'web.png')))
+        self.setWindowIcon(QIcon(os.path.join(path, '../images/web.png')))
 
 
 def main():

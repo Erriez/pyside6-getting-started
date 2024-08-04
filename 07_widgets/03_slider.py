@@ -47,7 +47,7 @@ class Window(QWidget):
         slider.valueChanged.connect(self.change_value)
 
         self.label = QLabel()
-        self.label.setPixmap(QPixmap(os.path.join(self.path, '..', 'images', 'mute.png')))
+        self.label.setPixmap(QPixmap(os.path.join(self.path, '../images/mute.png')))
         self.label.setGeometry(160, 40, 80, 30)
 
         hbox = QHBoxLayout()
@@ -59,13 +59,13 @@ class Window(QWidget):
 
     def change_value(self, value):
         if value <= 0:
-            self.label.setPixmap(QPixmap(os.path.join(self.path, '..', 'images', 'mute.png')))
+            self.label.setPixmap(QPixmap(os.path.join(self.path, '../images/mute.png')))
         elif value <= 30:
-            self.label.setPixmap(QPixmap(os.path.join(self.path, '..', 'images', 'min.png')))
+            self.label.setPixmap(QPixmap(os.path.join(self.path, '../images/min.png')))
         elif value <= 80:
-            self.label.setPixmap(QPixmap(os.path.join(self.path, '..', 'images', 'med.png')))
+            self.label.setPixmap(QPixmap(os.path.join(self.path, '../images/med.png')))
         else:
-            self.label.setPixmap(QPixmap(os.path.join(self.path, '..', 'images', 'max.png')))
+            self.label.setPixmap(QPixmap(os.path.join(self.path, '../images/max.png')))
 
 
 def main():

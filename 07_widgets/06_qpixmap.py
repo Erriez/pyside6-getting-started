@@ -39,7 +39,7 @@ class Window(QWidget):
 
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPixmap.html
         path = Path(__file__).resolve().parent
-        pixmap = QPixmap(os.path.join(path, '..', 'images', 'redrock.png'))
+        pixmap = QPixmap(os.path.join(path, '../images/redrock.png'))
 
         lbl_image = QLabel(self)
         lbl_image.setPixmap(pixmap)
