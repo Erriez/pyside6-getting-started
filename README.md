@@ -85,6 +85,8 @@ examples in this repository:
   `showNormal()` not working when window is minimized on Ubuntu X11 and Wayland.
 - [QTBUG-110448](https://bugreports.qt.io/browse/QTBUG-110448): Cannot remove 
   window min/max buttons on Ubuntu Wayland.
+- [QTBUG-132337](https://bugreports.qt.io/browse/QTBUG-132337): Removing window 
+  min/max buttons on Windows 11 also removes close button
 - [QTCREATORBUG-25807](https://bugreports.qt.io/browse/QTCREATORBUG-25807):
   PySide6 generated class doesn't load UI file correctly with QtCreator.
 - Example `13_qt_creator\01_qt_creator_qwidget.py` generates a warning:
