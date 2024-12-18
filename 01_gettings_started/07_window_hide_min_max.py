@@ -60,6 +60,10 @@ def main():
 
     # Remove minimize maximize button works on Windows 10 / Ubuntu X11, not
     # Ubuntu Wayland: https://bugreports.qt.io/browse/QTBUG-110448
+
+    # Another Pyside6 bug reported when removing the min/max button also removes
+    # the close button on Windows 11:
+    # https://bugreports.qt.io/browse/QTBUG-132337
     window.setWindowFlags(window.windowFlags() & Qt.CustomizeWindowHint)
     window.setWindowFlags(window.windowFlags() & ~Qt.WindowMinMaxButtonsHint)
 
