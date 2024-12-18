@@ -24,7 +24,7 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QFrame, QSplitter, QStyleFactory
+from PySide6.QtWidgets import QApplication, QWidget, QFrame, QSplitter, QStyleFactory, QLabel, QHBoxLayout
 from PySide6.QtCore import Qt
 import sys
 
@@ -36,26 +36,47 @@ class Window(QWidget):
         self.resize(300, 300)
         self.setWindowTitle('QSplitter')
 
-        hbox = QHBoxLayout(self)
+        # Create 3 frames
+        top_left_frame = QFrame(self)
+        top_left_frame.setFrameShape(QFrame.StyledPanel)
 
-        top_left = QFrame(self)
-        top_left.setFrameShape(QFrame.StyledPanel)
+        top_right_frame = QFrame(self)
+        top_right_frame.setFrameShape(QFrame.StyledPanel)
 
-        top_right = QFrame(self)
-        top_right.setFrameShape(QFrame.StyledPanel)
+        bottom_frame = QFrame(self)
+        bottom_frame.setFrameShape(QFrame.StyledPanel)
 
-        bottom = QFrame(self)
-        bottom.setFrameShape(QFrame.StyledPanel)
+        # Add label to center of each frame
+        top_left_label = QLabel('Top left')
+        top_left_label.setAlignment(Qt.AlignCenter)
+        top_left_hbox = QHBoxLayout()
+        top_left_hbox.addWidget(top_left_label)
+        top_left_frame.setLayout(top_left_hbox)
 
+        top_right_label = QLabel('Top right')
+        top_right_label.setAlignment(Qt.AlignCenter)
+        top_right_hbox = QHBoxLayout()
+        top_right_hbox.addWidget(top_right_label)
+        top_right_frame.setLayout(top_right_hbox)
+
+        bottom_label = QLabel('Bottom')
+        bottom_label.setAlignment(Qt.AlignCenter)
+        bottom_hbox = QHBoxLayout()
+        bottom_hbox.addWidget(bottom_label)
+        bottom_frame.setLayout(bottom_hbox)
+
+        # Add frames to splitter
         # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QSplitter.html
         splitter1 = QSplitter(Qt.Horizontal)
-        splitter1.addWidget(top_left)
-        splitter1.addWidget(top_right)
+        splitter1.addWidget(top_left_frame)
+        splitter1.addWidget(top_right_frame)
 
         splitter2 = QSplitter(Qt.Vertical)
         splitter2.addWidget(splitter1)
-        splitter2.addWidget(bottom)
+        splitter2.addWidget(bottom_frame)
 
+        # Add splitter to window
+        hbox = QHBoxLayout(self)
         hbox.addWidget(splitter2)
         self.setLayout(hbox)
         QApplication.setStyle(QStyleFactory.create('Cleanlooks'))
