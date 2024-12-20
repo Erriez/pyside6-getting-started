@@ -18,6 +18,6 @@
 
 ![04_grid_layout_span](04_grid_layout_span.png)
 
-## [05_resizable_window.py](04_grid_layout_span.py)
+## [05_resizable_window.py](05_resizable_window.py)
 
 ![05_resizable_window](05_resizable_window.png)

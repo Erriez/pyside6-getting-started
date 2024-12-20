@@ -21,3 +21,7 @@
 ## [05_custom_dialog.py](05_custom_dialog.py)
 
 ![05_custom_dialog](05_custom_dialog.png)
+
+## [06_dialog_model_modeless.py](06_dialog_model_modeless.py)
+
+![06_dialog_model_modeless](06_dialog_model_modeless.png)

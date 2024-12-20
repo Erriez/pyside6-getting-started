@@ -24,154 +24,87 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QHBoxLayout, QVBoxLayout,\
-    QDialog, QFormLayout, QLineEdit, QDialogButtonBox, QMessageBox, QSpinBox
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (
+    QApplication,
+    QWidget,
+    QDialog,
+    QDialogButtonBox,
+    QLabel,
+    QLineEdit,
+    QPushButton,
+    QHBoxLayout,
+    QVBoxLayout,
+    QMessageBox
+)
 import sys
 
 
-# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QDialog.html
-class CustomDialog(QDialog):
-    def __init__(self, parent=None, title='', name='', age=0):
+class Dialog(QDialog):
+    def __init__(self, parent=None):
         super().__init__(parent)
 
-        # Resize window
-        self.setMinimumWidth(300)
-        self.setWindowTitle(title)
+        # Set window size and title
+        self.setMinimumSize(250, 150)
+        self.setWindowTitle("Resizable dialog")
 
-        # Create name text box
-        self.txt_name = QLineEdit(name)
-        self.txt_name.setMaxLength(20)
+        # Create label and line edit, then add to horizontal box layout
+        self.labelName = QLabel("Your name:")
+        self.editName = QLineEdit()
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.addWidget(self.labelName)
+        self.horizontalLayout.addWidget(self.editName)
 
-        # Create age spinbox
-        self.spin_age = QSpinBox()
-        self.spin_age.setMinimum(0)
-        self.spin_age.setMaximum(100)
-        self.spin_age.setValue(age)
+        # Create a dialog button box for OK and Cancel buttons
+        self.buttonBox = QDialogButtonBox()
+        self.buttonBox.setStandardButtons(QDialogButtonBox.StandardButton.Cancel | QDialogButtonBox.StandardButton.Ok)
 
-        # Add text boxes to form layout
-        self.form = QFormLayout()
-        self.form.addRow('Name: ', self.txt_name)
-        self.form.addRow('Age:', self.spin_age)
+        # Connect OK and Cancel buttons to accept / reject slot
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
 
-        # Create dialog Ok and Cancel buttons
-        dialog_buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok |
-                                          QDialogButtonBox.StandardButton.Cancel)
-        dialog_buttons.accepted.connect(self.accept)
-        dialog_buttons.rejected.connect(self.reject)
-
-        # Add form and dialog buttons to vertical box layout
-        vbox = QVBoxLayout()
-        vbox.addLayout(self.form)
-        vbox.addWidget(dialog_buttons)
-
-        # Add vertical layout to window
-        self.setLayout(vbox)
-
-    def get_name(self):
-        # Return text from textbox
-        return self.txt_name.text()
-
-    def get_age(self):
-        # Return age from spinbox
-        return self.spin_age.value()
+        # Add previously created layout and widgets to the dialog
+        self.vboxLayout = QVBoxLayout(self)
+        self.vboxLayout.addLayout(self.horizontalLayout)
+        self.vboxLayout.addStretch() # <- Stretch between layout on the top and OK/Cancel buttons at the bottom
+        self.vboxLayout.addWidget(self.buttonBox)
 
 
-class MainWindow(QWidget):
+class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.custom_dialog_modeless = None
-        self.name = ''
-        self.age = 0
+        # Set window size and title
+        self.setMinimumSize(250, 150)
+        self.setWindowTitle("Main window")
 
-        # Set minimum window size
-        self.setMinimumSize(150, 100)
-        self.setWindowTitle('Custom dialog')
+        # Add one button to open dialog
+        self.buttonShowDialog = QPushButton("Show dialog")
+        self.buttonShowDialog.clicked.connect(self.on_show_dialog_model)
 
-        self.setWindowFlags(self.windowFlags() & Qt.CustomizeWindowHint)
-        self.setWindowFlags(self.windowFlags() & ~Qt.WindowMinMaxButtonsHint)
+        # Add button to vertical box layout
+        self.vboxLayout = QVBoxLayout(self)
+        self.vboxLayout.addWidget(self.buttonShowDialog)
 
-        # Create push buttons
-        show_dialog_model = QPushButton('Model dialog', self)
-        show_dialog_model.clicked.connect(self.dialog_model_show)
-        show_dialog_model.setFixedWidth(130)
-        show_dialog_modeless = QPushButton('Modeless dialog', self)
-        show_dialog_modeless.clicked.connect(self.dialog_modeless_show)
-        show_dialog_modeless.setFixedWidth(130)
+        # Add vertical box layout to widget
+        self.setLayout(self.vboxLayout)
 
-        # Add button to window
-        hbox = QHBoxLayout()
-        hbox.addWidget(show_dialog_model)
-        hbox.addWidget(show_dialog_modeless)
+    def on_show_dialog_model(self):
+        # Create dialog object
+        dialog = Dialog(parent=self)
 
-        # Create quit button
-        dialog_buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok)
-        dialog_buttons.button(QDialogButtonBox.StandardButton.Ok).setText('Quit')
-        dialog_buttons.accepted.connect(QApplication.quit)
-
-        # Add model buttons and quit button to layout
-        vbox = QVBoxLayout()
-        vbox.addLayout(hbox)
-        vbox.addWidget(dialog_buttons)
-
-        # Add layout to window
-        self.setLayout(vbox)
-
-    def dialog_model_show(self):
-        # Create custom model dialog
-        custom_dialog_model = CustomDialog(parent=self,
-                                           title='Custom Model Dialog',
-                                           name=self.name,
-                                           age=self.age)
-
-        # Wait until True (Ok / accepted) or False (Cancel / rejected) clicked
-        if custom_dialog_model.exec():
-            # Get results from dialog
-            self.name = custom_dialog_model.get_name()
-            self.age = custom_dialog_model.get_age()
-            self.show_results(name=self.name, age=self.age)
-
-    def dialog_modeless_show(self):
-        # Create custom modeless dialog
-        if not self.custom_dialog_modeless:
-            self.custom_dialog_modeless = CustomDialog(parent=self,
-                                                       title='Custom Modeless Dialog',
-                                                       name=self.name,
-                                                       age=self.age)
-            self.custom_dialog_modeless.accepted.connect(self.dialog_modeless_close)
-            self.custom_dialog_modeless.rejected.connect(self.dialog_modeless_reject)
-
-            # Show modeless dialog (show() returns immediately)
-            self.custom_dialog_modeless.show()
-
-    def dialog_modeless_close(self):
-        # Get results from dialog
-        self.name = self.custom_dialog_modeless.get_name()
-        self.age = self.custom_dialog_modeless.get_age()
-        self.show_results(name=self.name, age=self.age)
-
-        # Destroy object
-        self.custom_dialog_modeless = None
-
-    def dialog_modeless_reject(self):
-        # Destroy object
-        self.custom_dialog_modeless = None
-
-    def show_results(self, name, age):
-        # Show results in information message box
-        QMessageBox.information(self,
-                                'Result',
-                                "Hi {}! \nYou are {} years old.".format(name, age),
-                                QMessageBox.StandardButton.Ok)
+        # Show dialog model and wait for result to display in an information message box
+        if dialog.exec() == QDialog.Accepted:
+            QMessageBox.information(self, "Dialog", f"Hello {dialog.editName.text()}!")
+        else:
+            QMessageBox.information(self, "Dialog", "Clicked cancel")
 
 
 def main():
     app = QApplication(sys.argv)
-    main_window = MainWindow()
-    main_window.show()
+    window = Window()
+    window.show()
     sys.exit(app.exec())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
