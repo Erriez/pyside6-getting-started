@@ -66,7 +66,7 @@ class Window(QWidget):
 
         self.table.setItem(5, 0, QTableWidgetItem("Anne"))
         self.table.setItem(5, 1, QTableWidgetItem("28"))
-        self.table.setItem(4, 2, QTableWidgetItem("Female"))
+        self.table.setItem(5, 2, QTableWidgetItem("Female"))
 
         # Add table to layout, add layout to widget
         self.vBox = QVBoxLayout()
