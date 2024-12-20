@@ -6,4 +6,6 @@
 
 ![01_qt_creator_qwidget](01_qt_creator_qwidget/qt_creator_qwidget.png)
 
-![01_qt_creator_qwidget](01_qt_creator_qwidget.png)
+## [qt_creator_main.py](02_qt_creator_dialog/qt_creator_main.py)
+
+![02_qt_creator_dialog](02_qt_creator_dialog/qt_creator_dialog.png)
