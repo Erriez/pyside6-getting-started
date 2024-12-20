@@ -43,7 +43,7 @@ class Widget(QWidget):
         loader = QUiLoader()
 
         # Set path Qt design file
-        ui_path = Path(__file__).resolve().parent / "01_qt_creator_qwidget.ui"
+        ui_path = Path(__file__).resolve().parent / "qt_creator_qwidget.ui"
 
         # Open and load .ui file read-only
         ui_file = QFile(ui_path)
