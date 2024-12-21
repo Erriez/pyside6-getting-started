@@ -5,3 +5,7 @@
 ## [01_system_info.py](01_system_info.py)
 
 ![01_system_info](01_system_info.png)
+
+## [02_clipboard.py](02_clipboard.py)
+
+![02_clipboard](02_clipboard.png)
