@@ -21,3 +21,7 @@
 ## [05_resizable_window.py](05_resizable_window.py)
 
 ![05_resizable_window](05_resizable_window.png)
+
+## [06_basic_layouts.py](06_basic_layouts.py)
+
+![06_basic_layouts](06_basic_layouts.png)
