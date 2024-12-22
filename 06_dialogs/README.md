@@ -25,3 +25,7 @@
 ## [06_dialog_model_modeless.py](06_dialog_model_modeless.py)
 
 ![06_dialog_model_modeless](06_dialog_model_modeless.png)
+
+## [07_dialog_username_password.py](07_dialog_username_password.py)
+
+![07_dialog_username_password](07_dialog_username_password.png)
