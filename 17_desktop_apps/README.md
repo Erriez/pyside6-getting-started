@@ -9,3 +9,7 @@
 ## [02_clipboard.py](02_clipboard.py)
 
 ![02_clipboard](02_clipboard.png)
+
+## [03_settings.py](03_settings.py)
+
+![03_settings](03_settings.png)
