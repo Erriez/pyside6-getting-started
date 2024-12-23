@@ -47,17 +47,41 @@ ORGANIZATION_NAME = "Erriez"
 APPLICATION_NAME = "PySide6 Settings Example"
 
 
+class Setting:
+    """
+    Class holding a single setting value and default value
+    """
+    def __init__(self, default_value):
+        self._value = None
+        self._default_value = default_value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        if type(value) != type(self._default_value):
+            raise f"Invalid type"
+        self._value = value
+
+    @property
+    def default_value(self):
+        return self._default_value
+
+
 class Settings:
     """
     Class to convert settings between application and QSettings.
     Handle object types and default values.
     """
     _data = {
-        "startup-count": {"value": None, "default": 1},
-        "window-title": {"value": None, "default": APPLICATION_NAME},
-        "window-state": {"value": None, "default": Qt.WindowState.WindowNoState},
-        "window-size": {"value": None, "default": QSize(350, 200)},
-        "window-position": {"value": None, "default": QPoint(100, 100)},
+        "path": Setting(""),
+        "startup-count": Setting(1),
+        "window-title": Setting(APPLICATION_NAME),
+        "window-state": Setting(Qt.WindowState.WindowNoState),
+        "window-size": Setting(QSize(350, 200)),
+        "window-position": Setting(QPoint(100, 100)),
     }
 
     def __init__(self):
@@ -72,48 +96,30 @@ class Settings:
     def __del__(self):
         self.save()
 
-    @property
-    def path(self) -> str:
-        # Return settings path
-        return self._settings.fileName()
-
     def get(self, key):
-        # Return a setting and set default value
-        default_value = self._data[key]["default"]
-        value = self._data[key]["value"]
-        if type(value) != type(default_value):
-            value = default_value
-        return value
+        return self._data[key].value
 
     def set(self, key: str, value):
         # Save new setting
-        if key not in self._data:
-            raise f"Setting \"{key}\" not defined"
-        if type(value) != type(self._data[key]["default"]):
-            raise f"Setting \"{key}\" invalid type"
-        self._data[key]["value"] = value
+        self._data[key].value = value
 
     def remove_all(self):
         # Remove all settings
         self._settings.clear()
         self._deleted = True
 
-    def print(self):
-        # Print settings
-        print(f"Settings \"{self._settings.fileName()}\":")
-        for key in self._settings.allKeys():
-            print(f"  {key}: {self._settings.value(key)}")
-
     def load(self):
         # Load settings
         for key in self._data.keys():
-            self.set(key, self._settings.value(key, self._data[key]["default"]))
+            self.set(key, self._settings.value(key, self._data[key].default_value))
+        # Get settings path
+        self._data["path"].value = self._settings.fileName()
 
     def save(self):
         # Save settings when not deleted
         if not self._deleted:
             for key in self._data.keys():
-                self._settings.setValue(key, self._data[key]["value"])
+                self._settings.setValue(key, self._data[key].value)
             # Save settings
             self._settings.sync()
 
@@ -161,7 +167,7 @@ class DialogSettings(QDialog):
 
         # Settings path
         self.label_path = QLabel("Settings path:")
-        self.label_path_value = QLabel(self.settings.path)
+        self.label_path_value = QLabel(self.settings.get("path"))
 
         # Button to remove all settings
         self.button_remove = QPushButton("Remove")
@@ -211,8 +217,8 @@ class DialogSettings(QDialog):
         self.edit_window_title.setText(APPLICATION_NAME)
 
     def on_reset_startup_count(self):
-        self.settings.startup_count = 1
-        self.label_startup_count_value.setText(str(self.settings.startup_count))
+        self.settings.set("startup-count", 1)
+        self.label_startup_count_value.setText(str(self.settings.get("startup-count")))
 
     def on_accept(self):
         # Handle OK button
@@ -314,9 +320,6 @@ def main():
     startup_count = settings.get("startup-count")
     startup_count += 1
     settings.set("startup-count", startup_count)
-
-    # Print settings
-    settings.print()
 
     # Create application and pass settings
     app = QApplication(sys.argv)
