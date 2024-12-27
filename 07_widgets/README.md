@@ -49,3 +49,7 @@
 ## [12_context_menu.py](12_context_menu.py)
 
 ![12_context_menu](12_context_menu.png)
+
+## [13_tabs.py](13_tabs.py)
+
+![13_tabs](13_tabs.png)
