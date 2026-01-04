@@ -1,21 +1,33 @@
 # Qt PySide6 Getting Started
 
-This repository contains simple getting started examples to develop Qt
-applications in Python using PySide6. It is intended for educational purposes
-and self study:
+![Project](https://img.shields.io/badge/Project-PySide6%20Getting%20Started-blue?style=flat-square)
+[![License](https://img.shields.io/github/license/Erriez/pyside6-getting-started?style=flat-square)](https://github.com/Erriez/pyside6-getting-started/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/Erriez/pyside6-getting-started?style=flat-square)](https://github.com/Erriez/pyside6-getting-started/stargazers)
+[![Forks](https://img.shields.io/github/forks/Erriez/pyside6-getting-started?style=flat-square)](https://github.com/Erriez/pyside6-getting-started/network/members)
+![Last Commit](https://img.shields.io/github/last-commit/Erriez/pyside6-getting-started?style=flat-square)
+![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)
+![Platforms](https://img.shields.io/badge/Platforms-Windows%20%7C%20Linux-lightgrey?style=flat-square)
+![PySide6](https://img.shields.io/badge/PySide6-6.7.2-green?style=flat-square)
 
-- Basic Python knowledge recommended.
-- No experiences with Qt or PySide required.
-- A computer to run / test the examples.
+This repository contains simple, self‑contained examples demonstrating how to develop Qt 
+applications in Python using PySide6.  
+It is intended for educational purposes and self‑study:
 
-## PySide6 Introduction
+- Basic Python knowledge recommended  
+- No experience with Qt or PySide6 required  
+- A computer to run and test the examples  
 
-PySide6 is the official `Qt for Python` module, which provides access to the
-complete Qt 6.0+ framework. It is available under both Open Source 
-(LGPLv3/GPLv2) and commercial license. Using PyPi (PIP) is the recommended
-installation source.
+---
 
-## PySide6 Examples
+## 🧭 PySide6 Introduction
+
+PySide6 is the official `Qt for Python` module, which provides access to the complete Qt 6.0+
+framework. It is available under both Open Source (LGPLv3/GPLv2) and commercial license. Using PyPi
+(PIP) is the recommended installation source.
+
+---
+
+## 🧪 PySide6 Examples
 
 - [00 Qt Core](00_qt_core/README.md)
 - [01 Getting Started](01_gettings_started/README.md)
@@ -38,40 +50,92 @@ installation source.
 - [18 Deployment](18_deployment/README.md)
 - [19 Tables](19_tables/README.md)
 
-## PySide6 Deployment
+---
 
-A separate PySide6 deployment project for Windows / Linux using Nuitka on
-Github Actions is available 
-[here](https://github.com/Erriez/pyside6-nuitka-deployment). 
+## 🎯 Who Is This For?
 
-## PySide6 Documentation
+These examples are intended for:
+
+- Developers new to PySide6 (or Qt)
+- Students learning GUI programming in Python3
+- Anyone looking for small, focused, and reproducible PySide6 examples
+
+---
+
+## 📦 Project Scope
+
+This repository provides a minimal, self‑contained Python 3 / PySide6 example application intended 
+for learning, experimentation, and as a clean starting point for new PySide6 projects.
+
+The project intentionally keeps its scope narrow:
+
+- No external runtime dependencies  
+- No networking, API calls, or remote communication  
+- No dynamic or untrusted code execution  
+- No storage or processing of sensitive data  
+- No packaging, deployment, or executable‑building logic  
+  (e.g., **PyInstaller**, **Nuitka**, **cx_Freeze**, or similar tools are **out of scope**)  
+- No long‑term maintenance guarantees — best‑effort updates only  
+
+This ensures the codebase remains simple, transparent, and easy to understand for developers exploring PySide6 fundamentals.
+
+---
+
+## ⛏️ PySide6 Deployment
+
+A separate PySide6 deployment project for Windows / Linux using Nuitka on Github Actions is 
+available  [here](https://github.com/Erriez/pyside6-nuitka-deployment). 
+
+---
+
+## 📖 PySide6 Documentation
 
 - [Qt for Python](https://doc.qt.io/qtforpython/)
 - [PySide6 Python module](https://pypi.org/project/PySide6/)
 - [Qt Licensing](https://www.qt.io/licensing/)
 
-## Setup and Usage
+---
+
+## ⚙️ Setup and Usage
 
 - [Linux setup](SETUP_LINUX.md)
 - [Windows setup](SETUP_WINDOWS.md)
 - MAC setup: Not supported by developer [Erriez](https://github.com/Erriez/).
 
-## Debug with PyCharm
+## 🐞 Debug with Visual Studio Code
+
+- [Debug with free VSCode](SETUP_VSCode.md) (On Windows and Linux desktops)
+
+## 🐞 Debug with PyCharm
 
 - [Debug with free PyCharm](SETUP_PyCharm.md) (On Windows and Linux desktops)
 
-## Versions and Platforms
+---
 
-Examples are tested with PySide 6.7.2 on Ubuntu 22.10 Wayland and
+## 🚗 Supported Versions and Platforms
+
+Examples are tested with PySide6 6.7.2 on Ubuntu 22.10 Wayland (x64 and Raspberry Pi OS) and
 Windows 10/11.
-As Qt is platform independent, it may work on other systems like Raspberry Pi.
-See section [Known issues](https://github.com/Erriez/pyside6-getting-started#known-issues) 
-for platform specific issues.
+As Qt is platform‑independent, the examples may work on other platforms, but they are not supported 
+by this project.
 
-## Known Bugs and Issues
+Please refer to section [Known issues](https://github.com/Erriez/pyside6-getting-started#known-issues) 
+for platform specific known issues.
 
-The following `Qt` / `PySide6` / `Qt Creator` bugs are reported and affects 
-examples in this repository:
+---
+
+## 🤝 Contributions
+
+Contributions are welcome, but please keep the project scope in mind.
+Adding new features, external dependencies, other platform support or deployment tooling will not be
+accepted.
+
+---
+
+## ⁉️ Known Bugs and Issues
+
+The following `Qt` / `PySide6` / `Qt Creator` bugs are reported and affects examples in this
+repository:
 
 - [QTBUG-110119](https://bugreports.qt.io/browse/QTBUG-110119): Cannot move 
   window on Ubuntu Wayland.
