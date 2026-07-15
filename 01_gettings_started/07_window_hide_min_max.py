@@ -24,9 +24,8 @@
 # Source: https://github.com/Erriez/pyside6-getting-started
 #
 
-from PySide6.QtWidgets import QApplication, QLabel
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel
 from PySide6.QtCore import Qt
-import os
 import sys
 
 
@@ -45,32 +44,36 @@ def get_desktop_type():
     return desktop
 
 
+class Window(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        # Resize window
+        self.resize(300, 150)
+        # Set window title
+        self.setWindowTitle('Hide Min/Max Buttons')
+
+        # Create window from QLabel
+        self.label = QLabel('Desktop: ' + get_desktop_type())
+        # Align label center
+        self.label.setAlignment(Qt.AlignCenter)
+
+        # Add label button to vertical box layout
+        self.layout = QVBoxLayout(self)
+        self.layout.addWidget(self.label)
+
+
 def main():
     # Create application
     app = QApplication(sys.argv)
+    window = Window()
 
-    # Create window from QLabel
-    window = QLabel('Desktop: ' + get_desktop_type())
-    # Resize window
-    window.resize(300, 150)
-    # Set window title
-    window.setWindowTitle('Min/Max Buttons')
-    # Align label center
-    window.setAlignment(Qt.AlignCenter)
+    # Remove window minimize button
+    window.setWindowFlag(Qt.WindowMinimizeButtonHint, False)
+    # Remove window maximize button
+    window.setWindowFlag(Qt.WindowMaximizeButtonHint, False)
 
-    # Remove minimize maximize button works on Windows 10 / Ubuntu X11, not
-    # Ubuntu Wayland: https://bugreports.qt.io/browse/QTBUG-110448
-
-    # Another Pyside6 bug reported when removing the min/max button also removes
-    # the close button on Windows 11:
-    # https://bugreports.qt.io/browse/QTBUG-132337
-    window.setWindowFlags(window.windowFlags() & Qt.CustomizeWindowHint)
-    window.setWindowFlags(window.windowFlags() & ~Qt.WindowMinMaxButtonsHint)
-
-    # Show window
     window.show()
-
-    # Main loop
     sys.exit(app.exec())
 
 
